@@ -1,5 +1,5 @@
 #FIX THE LINE BELOW
-class Mystr(str) : #<-----Replace xyz-make a new class, MyStr, that inherits from str
+class MyStr(str) : #<-----Replace xyz-make a new class, MyStr, that inherits from str
     """
     Build a subclass of str with some new, fun methods.
     """
@@ -17,7 +17,7 @@ class Mystr(str) : #<-----Replace xyz-make a new class, MyStr, that inherits fro
 
     def replace(self, take_out, use_this):
         """
-        Override the replace method of string.
+        Override the replhhace method of string.
         The new replace method is case-insensitive,
         and the output will always be lower-case.
 
@@ -49,6 +49,10 @@ class Mystr(str) : #<-----Replace xyz-make a new class, MyStr, that inherits fro
         #       do this in as little as 1 line.
         #YOUR CODE BELOW:
         #################
-        output_str.lower()
-        output_str=super(Mystr,self).replace(take_out,use_this)
+        #This is like:
+        #1. get super class
+        #2. use super class' "replace" method
+        #3. use replace on the self instance
+        #self.replace, except replace from super class
+        output_str=super(MyStr,self).lower().replace(take_out.lower(),use_this.lower())
         return output_str
